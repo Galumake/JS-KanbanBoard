@@ -16,9 +16,15 @@ add_btn.addEventListener("click", () => {
 });
 
 const create_item = () => {
-  const item = document.createElement("div");
-  item.classList.add('item');
-  item.id = 'item_' + order;
+    let item = document.createElement("div");
+    item.classList.add("item");
+    item.id = "item-" + order;
+    item.draggable = true;
+    item.addEventListener("dragstart", event =>{
+      return setData();
+    })
 };
+
+
 
 document.querySelectorAll(".drop").forEach((element) => {});
